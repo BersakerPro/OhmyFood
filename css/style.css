@@ -1,4 +1,35 @@
 body {
   width: 100%;
+  margin: 0;
+}
+
+header {
+  height: 80px;
+  text-align: center;
+  -webkit-box-shadow: 0 0 15px #717D7E;
+          box-shadow: 0 0 15px #717D7E;
+}
+
+header img {
+  width: 200px;
+  margin-top: 30px;
+}
+
+.local {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.local__icon {
+  width: 60px;
+}
+
+img {
+  width: 200px;
 }
 /*# sourceMappingURL=style.css.map */
