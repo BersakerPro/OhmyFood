@@ -2,11 +2,14 @@ $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 $color-shadow: #717D7E;
-
+@mixin icon-size {
+    font-size: 25px;
+}
 
 body{
     width: 100%;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 header{
     height: 80px;
@@ -18,11 +21,15 @@ header img{
     margin-top: 30px;
 }
 .local{
-    height: 50px;
-    display: flex;
     justify-content: center;
+    display: flex;
+    margin: auto;
+    font-weight: bold;
         &__icon{
-            width: 60px;
+            text-align: center;
+            padding: 12px;
+            width: 30px;
+            @include icon-size;
         }
 }
 img{

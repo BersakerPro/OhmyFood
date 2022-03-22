@@ -1,6 +1,7 @@
 body {
   width: 100%;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 header {
@@ -16,17 +17,21 @@ header img {
 }
 
 .local {
-  height: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  font-weight: bold;
 }
 
 .local__icon {
-  width: 60px;
+  text-align: center;
+  padding: 12px;
+  width: 30px;
+  font-size: 25px;
 }
 
 img {
