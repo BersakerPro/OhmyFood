@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 $color-shadow: #717D7E;
+$color-footer: #3B3B3B;
 @mixin icon-size {
     font-size: 20px;
 }
@@ -176,9 +179,15 @@ header img{
         }
     }
 }
-
-
-
-img{
-    width: 200px;
+footer{
+    width: 100%;
+    background-color: $color-footer;
+    color: white;
+    .title{
+        font-family: 'Shrikhand', cursive;
+        font-size: 25px;
+        padding: 20px;
+    }
 }
+
+

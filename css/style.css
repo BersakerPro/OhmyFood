@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @-webkit-keyframes heart {
   0% {
     font-weight: bold;
@@ -14,7 +16,6 @@
     opacity: 1;
   }
 }
-
 @keyframes heart {
   0% {
     font-weight: bold;
@@ -234,7 +235,15 @@ header img {
           animation-duration: 1000ms;
 }
 
-img {
-  width: 200px;
+footer {
+  width: 100%;
+  background-color: #3B3B3B;
+  color: white;
+}
+
+footer .title {
+  font-family: 'Shrikhand', cursive;
+  font-size: 25px;
+  padding: 20px;
 }
 /*# sourceMappingURL=style.css.map */
