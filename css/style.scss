@@ -17,6 +17,22 @@ $color-shadow: #717D7E;
         background-color: $color-secondary;
     }
 }
+@keyframes heart{
+    0%{
+        font-weight: bold;
+        opacity: 0;
+    }
+    50%{
+        font-weight: bold;
+        color: $color-secondary;
+        opacity: 0.5;
+    }
+    100%{
+        font-weight: bold;
+        color: $color-primary;
+        opacity: 1;
+    }
+}
 h2{
     font-size: 25px;
 }
@@ -117,10 +133,13 @@ header img{
         margin-left: 20px;
     }
     &__card{
+        position: relative;
         width: 350px;
-        height: 250px;
+        height: 260px;
         border-radius: 20px;
+        box-shadow: 0 5px 7px $color-shadow ;
         margin: auto;
+        margin-bottom: 30px;
         img{
             width: 100%;
             height: 70%;
@@ -128,19 +147,37 @@ header img{
             object-position: bottom;
             border-radius: 20px 20px 0 0;
         }
+        .new{
+            position: absolute;
+            transform: translateY(-190px);
+            margin-left: 235px;
+            padding: 5px 10px;
+            border-radius: 3px;
+            color: green;
+            background-color: $color-tertiary;
+            font-size: 20px;
+        }
         &__text{
             display: flex;
             justify-content: space-between;
-            h3{
-                margin: 0;
-                margin-top: 10px;
+            h3, p{
+                margin: 10px 0 5px 10px;
             }
-            p{
-                margin: 0;
+            .iheart{
+                width: 25px;
+                font-size: 30px;
+                padding-top: 20px;
+                padding-right: 30px;
+                &:hover::before{
+                    animation-name: heart;
+                    animation-duration: 1000ms;
+                }
             }
         }
     }
 }
+
+
 
 img{
     width: 200px;
