@@ -8,24 +8,32 @@ $color-footer: #3B3B3B;
 @mixin icon-size {
     font-size: 20px;
 }
+@mixin color-btn {
+    background-image: linear-gradient(to top, $color-primary, $color-secondary);
+}
 @mixin btn {
     display: block;
     margin: auto;
     border-radius: 50px;
-    background-color: $color-primary;
+    box-shadow: 2px 1px 10px -3px black;
+    @include color-btn;
     color: white;
     font-size: 16px;
-    transition: background-color 500ms;
+    opacity: 1;
+    transition: all 500ms;
     &:hover{
-        background-color: $color-secondary;
+        opacity: 0.7;
+        box-shadow: 2px 1px 20px -3px black;
     }
 }
 @keyframes heart{
     0%{
+        transform: scaleY(0);
         font-weight: bold;
         opacity: 0;
     }
     50%{
+        transform: scaleY(0.5);
         font-weight: bold;
         color: $color-secondary;
         opacity: 0.5;
@@ -34,6 +42,7 @@ $color-footer: #3B3B3B;
         font-weight: bold;
         color: $color-primary;
         opacity: 1;
+        transform: scaleY(1);
     }
 }
 h2{
@@ -120,14 +129,14 @@ header img{
         padding-left: 30px;
         z-index: 1;
         font-weight: bold;
+        &:hover > i{
+            color: $color-primary;
+        }
     }
     &__icon{
         color: grey;
         margin-right: 40px;
         @include icon-size;
-        &:hover{
-            color: $color-primary;
-        }
     }
 }
 .restaurant{
@@ -173,20 +182,26 @@ header img{
                 padding-right: 30px;
                 &:hover::before{
                     animation-name: heart;
-                    animation-duration: 1000ms;
+                    animation-duration: 2000ms;
                 }
             }
         }
     }
 }
 footer{
-    width: 100%;
+    height: 220px;
     background-color: $color-footer;
     color: white;
+    padding-left: 30px;
+    line-height: 15px;
     .title{
         font-family: 'Shrikhand', cursive;
         font-size: 25px;
-        padding: 20px;
+        padding-top: 30px;
+        padding-bottom: 15px;
+    }
+    i{
+        margin-right: 10px;
     }
 }
 
