@@ -26,23 +26,40 @@ $color-footer: #3B3B3B;
         box-shadow: 2px 1px 20px -3px black;
     }
 }
-@keyframes heart{
+@mixin heartfull-color {
+    background: linear-gradient(to top, $color-primary, $color-secondary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;    
+}
+@keyframes heartfull {
     0%{
-        transform: scaleY(0);
-        font-weight: bold;
+        @include heartfull-color;
         opacity: 0;
     }
-    50%{
-        transform: scaleY(0.5);
+    25%{
         font-weight: bold;
-        color: $color-secondary;
-        opacity: 0.5;
+        @include heartfull-color;
+        opacity: 0.75;
+        transform: scale(0.25);
+    }
+    50%{
+        font-weight: bold;
+        @include heartfull-color;
+        opacity: 1;
+        transform: scale(0.5);
+    }
+    75%{
+        font-weight: bold;
+        @include heartfull-color;
+        opacity: 1;
+        transform: scale(0.75);
     }
     100%{
         font-weight: bold;
-        color: $color-primary;
+        @include heartfull-color;
         opacity: 1;
-        transform: scaleY(1);
+        transform: scale(1);
     }
 }
 h2{
@@ -176,13 +193,13 @@ header img{
                 margin: 10px 0 5px 10px;
             }
             .iheart{
-                width: 25px;
                 font-size: 30px;
-                padding-top: 20px;
-                padding-right: 30px;
-                &:hover::before{
-                    animation-name: heart;
-                    animation-duration: 2000ms;
+                margin-top: 20px;
+                margin-right: 30px;
+                &:focus{
+                    animation-name: heartfull;
+                    animation-duration: 500ms;
+                    animation-fill-mode: forwards;
                 }
             }
         }
