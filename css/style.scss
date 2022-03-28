@@ -110,7 +110,6 @@ h2{
 h4{
     margin: 10px 0 0 10px;
     font-size: 18px;
-    padding-top: 10px;
 }
 
 body{
@@ -252,10 +251,16 @@ header{
         }
     }
 }
-.img__menu{
+.contain__img__menu{
     display: block;
     width: 100%;
     height: 250px;
+    .img__menu{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
 }
 .contain__menu{
     border-radius: 50px 50px 0 0;
@@ -284,10 +289,20 @@ header{
     }
 }
 .menu__card{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
     border-radius: 20px;
     box-shadow: 0 5px 10px $color-shadow ;
     margin: 25px 0;
+    &__text{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 5px;
+    }
     &__flex{
+        width: 100%;
         display: flex;
         justify-content: space-between;
         margin: 0 10px;
@@ -301,7 +316,24 @@ header{
         }
         .price{
             font-weight: bold;
+            padding-right: 20px;
         }
+    }
+}
+.menu__card:hover > .check{
+    display: initial;
+}
+.check{
+    width: 60px;
+    border-radius: 0 20px 20px 0;
+    line-height: 70px;
+    text-align: center;
+    background-color: $color-tertiary;
+    display: none;
+    i{
+        font-weight: bold;
+        color: white;
+        @include icon-size;
     }
 }
 .button{
