@@ -100,6 +100,37 @@ $color-footer: #3B3B3B;
         transform: scale(1);
     }
 }
+@keyframes checkmenu {
+    0%{
+        width: 0;
+        opacity: 0;
+    }
+    25%{
+        width: 15px;
+        opacity: 1;
+    }
+    50%{
+        width: 30px;
+        opacity: 1;
+    }
+    75%{
+        width: 45px;
+        opacity: 1;
+    }
+    100%{
+        width: 60px;
+        opacity: 1;
+    }
+}
+@keyframes rotateicon {
+    from{
+        transform: rotate(-360°);
+    }
+    to{
+        transform: rotate(360°);
+    }
+    
+}
 h1{
     font-family: 'Shrikhand', cursive;
     font-size: 30px;
@@ -310,6 +341,7 @@ header{
             margin: 5px 10px 10px 0;
         }
         .comment{
+            width: 190px;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
@@ -322,15 +354,25 @@ header{
 }
 .menu__card:hover > .check{
     display: initial;
+    animation-name: checkmenu;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
 }
+.menu__card:hover > ::before{
+    animation-name: rotateicon;
+    animation-duration: 500ms;
+}
+
+
+
 .check{
-    width: 60px;
+    width:60px;
     border-radius: 0 20px 20px 0;
-    line-height: 70px;
     text-align: center;
     background-color: $color-tertiary;
     display: none;
     i{
+        line-height: 70px;
         font-weight: bold;
         color: white;
         @include icon-size;

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @-webkit-keyframes heartfull {
@@ -216,6 +217,74 @@
     opacity: 1;
     -webkit-transform: scale(1);
             transform: scale(1);
+  }
+}
+
+@-webkit-keyframes checkmenu {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  25% {
+    width: 15px;
+    opacity: 1;
+  }
+  50% {
+    width: 30px;
+    opacity: 1;
+  }
+  75% {
+    width: 45px;
+    opacity: 1;
+  }
+  100% {
+    width: 60px;
+    opacity: 1;
+  }
+}
+
+@keyframes checkmenu {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  25% {
+    width: 15px;
+    opacity: 1;
+  }
+  50% {
+    width: 30px;
+    opacity: 1;
+  }
+  75% {
+    width: 45px;
+    opacity: 1;
+  }
+  100% {
+    width: 60px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes rotateicon {
+  from {
+    -webkit-transform: rotate(-360°);
+            transform: rotate(-360°);
+  }
+  to {
+    -webkit-transform: rotate(360°);
+            transform: rotate(360°);
+  }
+}
+
+@keyframes rotateicon {
+  from {
+    -webkit-transform: rotate(-360°);
+            transform: rotate(-360°);
+  }
+  to {
+    -webkit-transform: rotate(360°);
+            transform: rotate(360°);
   }
 }
 
@@ -546,6 +615,7 @@ header span {
 }
 
 .menu__card__flex .comment {
+  width: 190px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -558,18 +628,31 @@ header span {
 
 .menu__card:hover > .check {
   display: initial;
+  -webkit-animation-name: checkmenu;
+          animation-name: checkmenu;
+  -webkit-animation-duration: 200ms;
+          animation-duration: 200ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.menu__card:hover > ::before {
+  -webkit-animation-name: rotateicon;
+          animation-name: rotateicon;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
 }
 
 .check {
   width: 60px;
   border-radius: 0 20px 20px 0;
-  line-height: 70px;
   text-align: center;
   background-color: #99E2D0;
   display: none;
 }
 
 .check i {
+  line-height: 70px;
   font-weight: bold;
   color: white;
   font-size: 20px;
