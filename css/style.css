@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @-webkit-keyframes heartfull {
@@ -266,25 +265,59 @@
   }
 }
 
-@-webkit-keyframes rotateicon {
-  from {
-    -webkit-transform: rotate(-360°);
-            transform: rotate(-360°);
-  }
+@-webkit-keyframes spin {
   to {
-    -webkit-transform: rotate(360°);
-            transform: rotate(360°);
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
   }
 }
 
-@keyframes rotateicon {
-  from {
-    -webkit-transform: rotate(-360°);
-            transform: rotate(-360°);
-  }
+@keyframes spin {
   to {
-    -webkit-transform: rotate(360°);
-            transform: rotate(360°);
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+
+@-webkit-keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
@@ -300,6 +333,109 @@ h2 {
 h4 {
   margin: 10px 0 0 10px;
   font-size: 18px;
+}
+
+.loading-spinner {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation-name: spinner;
+          animation-name: spinner;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loading-spinner__primary {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border: 5px solid #9356DC;
+  border-left-color: white;
+  border-right-color: white;
+  border-radius: 50%;
+  top: 40%;
+  left: 25%;
+  -webkit-animation: spin 4s linear infinite;
+          animation: spin 4s linear infinite;
+}
+
+.loading-spinner__secondary {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: 5px solid #FF79DA;
+  border-top-color: white;
+  border-bottom-color: white;
+  border-radius: 50%;
+  top: 40%;
+  left: 28%;
+  margin-top: 10px;
+  -webkit-animation: spin 3s linear infinite;
+          animation: spin 3s linear infinite;
+  animation-direction: reverse;
+}
+
+.loading-spinner__tertiary {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 5px solid #99E2D0;
+  border-top-color: white;
+  border-bottom-color: white;
+  border-radius: 50%;
+  top: 40%;
+  left: 30%;
+  margin-top: 20px;
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+}
+
+.loading-spinner__point {
+  position: absolute;
+  top: 44%;
+  left: 40%;
+  font-size: 50px;
+}
+
+.loading-spinner__point .point1 {
+  opacity: 0;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  color: #9356DC;
+  -webkit-animation-name: apparition;
+          animation-name: apparition;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.loading-spinner__point .point2 {
+  opacity: 0;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  color: #FF79DA;
+  -webkit-animation-name: apparition;
+          animation-name: apparition;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.loading-spinner__point .point3 {
+  opacity: 0;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  color: #99E2D0;
+  -webkit-animation-name: apparition;
+          animation-name: apparition;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 body {
@@ -571,6 +707,15 @@ header span {
   border-bottom: solid 2px #99E2D0;
   width: 40px;
   padding-bottom: 5px;
+  opacity: 0;
+  -webkit-animation-name: apparition;
+          animation-name: apparition;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
 }
 
 .menu__card {
@@ -626,7 +771,7 @@ header span {
   padding-right: 20px;
 }
 
-.menu__card:hover > .check {
+.menu__card:hover .check {
   display: initial;
   -webkit-animation-name: checkmenu;
           animation-name: checkmenu;
@@ -634,13 +779,6 @@ header span {
           animation-duration: 200ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-}
-
-.menu__card:hover > ::before {
-  -webkit-animation-name: rotateicon;
-          animation-name: rotateicon;
-  -webkit-animation-duration: 500ms;
-          animation-duration: 500ms;
 }
 
 .check {
@@ -656,6 +794,8 @@ header span {
   font-weight: bold;
   color: white;
   font-size: 20px;
+  -webkit-animation: spin 400ms linear;
+          animation: spin 400ms linear;
 }
 
 .button {
@@ -687,6 +827,114 @@ header span {
   opacity: 0.7;
   -webkit-box-shadow: 2px 1px 20px -3px black;
           box-shadow: 2px 1px 20px -3px black;
+}
+
+.e_1 {
+  opacity: 0;
+  -webkit-animation-name: apparition;
+          animation-name: apparition;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.e_2 {
+  opacity: 0;
+  -webkit-animation-name: apparition;
+          animation-name: apparition;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+.e_3 {
+  opacity: 0;
+  -webkit-animation-name: apparition;
+          animation-name: apparition;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.p_1 {
+  opacity: 0;
+  -webkit-animation-name: apparition;
+          animation-name: apparition;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+
+.p_2 {
+  opacity: 0;
+  -webkit-animation-name: apparition;
+          animation-name: apparition;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s;
+}
+
+.p_3 {
+  opacity: 0;
+  -webkit-animation-name: apparition;
+          animation-name: apparition;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+}
+
+.d_1 {
+  opacity: 0;
+  -webkit-animation-name: apparition;
+          animation-name: apparition;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 2.2s;
+          animation-delay: 2.2s;
+}
+
+.d_2 {
+  opacity: 0;
+  -webkit-animation-name: apparition;
+          animation-name: apparition;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
+}
+
+.d_3 {
+  opacity: 0;
+  -webkit-animation-name: apparition;
+          animation-name: apparition;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 2.6s;
+          animation-delay: 2.6s;
 }
 
 footer {
