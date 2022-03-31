@@ -142,16 +142,10 @@ $color-footer: #3B3B3B;
         opacity: 1;
     }
 }
-@keyframes spinner {
-    0%{
-        opacity: 0;
+@keyframes comment-width {
+    to{
+        width: 190px;
     }
-    50%{
-        opacity: 1;
-    } 
-    100%{
-        opacity: 0;
-    }  
 }
 h1{
     font-family: 'Shrikhand', cursive;
@@ -164,10 +158,19 @@ h4{
     margin: 10px 0 0 10px;
     font-size: 18px;
 }
+.href-style{
+    text-decoration: none;
+    color: black;
+}
+.href-style__contact{
+    text-decoration: none;
+    color: white;
+}
 .loading-spinner{
     align-items: center;
-    animation-name: spinner;
-    animation-duration: 3s;
+    animation-name: apparition;
+    animation-direction: reverse;
+    animation-duration: 2.5s;
     animation-fill-mode: forwards;
     &__primary{
         position: absolute;
@@ -247,9 +250,11 @@ body{
     box-sizing: border-box;
 }
 header{
+    opacity: 0;
     height: 70px;
     box-shadow:0 0 10px $color-shadow;
     text-align: center;
+    animation: apparition 0.2s 2s forwards;
     img{
         width: 200px;
         margin-top: 20px;
@@ -272,6 +277,10 @@ header{
             width: 30px;
             @include icon-size;
         }
+}
+main{
+    animation: apparition 0.2s 2s forwards;
+    opacity: 0;
 }
 .description{
     margin: auto;
@@ -440,7 +449,7 @@ header{
             margin: 5px 10px 10px 0;
         }
         .comment{
-            width: 190px;
+            width: 250px;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
@@ -457,6 +466,9 @@ header{
         animation-name: checkmenu;
         animation-duration: 200ms;
         animation-fill-mode: forwards;
+    }
+    .comment{
+        animation: comment-width 0.1s forwards;
     }
 }    
 
@@ -489,49 +501,55 @@ header{
 }
 .e_1{
     @include apparition;
-    animation-delay: 0.6s;
+    animation-delay: 2.6s;
 }
 .e_2{
     @include apparition;
-    animation-delay: 0.8s;  
+    animation-delay: 2.8s;  
 }
 .e_3{
     @include apparition;
-    animation-delay: 1s;
+    animation-delay: 3s;
+}
+.e_4{
+    @include apparition;
+    animation-delay: 3.2s
 }
 .p_1{
     @include apparition;
-    animation-delay: 1.4s;
+    animation-delay: 3.4s;
 }
 .p_2{
     @include apparition;
-    animation-delay: 1.6s;
+    animation-delay: 3.6s;
 }
 .p_3{
     @include apparition;
-    animation-delay: 1.8s;
+    animation-delay: 3.8s;
 }
 .d_1{
     @include apparition;
-    animation-delay: 2.2s;
+    animation-delay: 4.2s;
 }
 .d_2{
     @include apparition;
-    animation-delay: 2.4s;
+    animation-delay: 4.4s;
 }
 .d_3{
     @include apparition;
-    animation-delay: 2.6s;
+    animation-delay: 4.6s;
 }
 
 
 
 footer{
+    opacity: 0;
     height: 220px;
     background-color: $color-footer;
     color: white;
     padding-left: 30px;
     line-height: 15px;
+    animation: apparition 0.2s 2s forwards;
     .title{
         font-family: 'Shrikhand', cursive;
         font-size: 25px;
