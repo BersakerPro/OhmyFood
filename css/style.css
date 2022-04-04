@@ -334,9 +334,6 @@ h4 {
 }
 
 .loading-spinner {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-animation-name: apparition;
           animation-name: apparition;
   animation-direction: reverse;
@@ -355,7 +352,10 @@ h4 {
   border-right-color: white;
   border-radius: 50%;
   top: 40%;
-  left: 25%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   -webkit-animation: spin 4s linear infinite;
           animation: spin 4s linear infinite;
 }
@@ -369,7 +369,10 @@ h4 {
   border-bottom-color: white;
   border-radius: 50%;
   top: 40%;
-  left: 28%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 10px;
   -webkit-animation: spin 3s linear infinite;
           animation: spin 3s linear infinite;
@@ -385,7 +388,10 @@ h4 {
   border-bottom-color: white;
   border-radius: 50%;
   top: 40%;
-  left: 30%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 20px;
   -webkit-animation: spin 2s linear infinite;
           animation: spin 2s linear infinite;
@@ -393,8 +399,12 @@ h4 {
 
 .loading-spinner__point {
   position: absolute;
+  width: 40px;
   top: 44%;
-  left: 40%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 50px;
 }
 
@@ -467,6 +477,7 @@ header span {
 }
 
 .local {
+  height: 50px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -474,15 +485,27 @@ header span {
   display: -ms-flexbox;
   display: flex;
   margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-weight: bold;
   background-color: rgba(198, 198, 198, 0.4);
 }
 
 .local__icon {
   text-align: center;
-  padding: 12px;
   width: 30px;
   font-size: 20px;
+}
+
+.local__search {
+  padding-left: 10px;
+  height: 40px;
+  width: 180px;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  background-color: transparent;
 }
 
 main {
@@ -535,9 +558,26 @@ main {
   margin: 50px 20px;
 }
 
+@media screen and (min-width: 992px) {
+  .fonction {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+
 .fonction ul {
   list-style: none;
   padding: 0;
+}
+
+@media screen and (min-width: 992px) {
+  .fonction ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
 }
 
 .fonction li {
@@ -592,8 +632,22 @@ main {
   width: 100%;
 }
 
+@media screen and (min-width: 992px) {
+  .restaurant {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+
 .restaurant h2 {
   margin-left: 20px;
+}
+
+@media screen and (min-width: 992px) {
+  .restaurant h2 {
+    margin: 0;
+    margin-bottom: 20px;
+  }
 }
 
 .restaurant__card {
@@ -605,6 +659,12 @@ main {
           box-shadow: 0 5px 7px #717D7E;
   margin: auto;
   margin-bottom: 30px;
+}
+
+@media screen and (min-width: 992px) {
+  .restaurant__card {
+    margin: 30px;
+  }
 }
 
 .restaurant__card img {
@@ -648,13 +708,23 @@ main {
   font-size: 30px;
 }
 
-.restaurant__card__text .iheart:focus {
+.restaurant__card__text .iheart:hover {
   -webkit-animation-name: heartfull;
           animation-name: heartfull;
   -webkit-animation-duration: 300ms;
           animation-duration: 300ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+}
+
+@media screen and (min-width: 992px) {
+  .contain__restaurant__card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .contain__img__menu {
@@ -696,7 +766,7 @@ main {
   font-size: 30px;
 }
 
-.contain__menu .title .iheart:focus {
+.contain__menu .title .iheart:hover {
   -webkit-animation-name: heartfull;
           animation-name: heartfull;
   -webkit-animation-duration: 300ms;
@@ -708,6 +778,12 @@ main {
 .menu {
   width: 90%;
   margin: auto;
+}
+
+@media screen and (min-width: 992px) {
+  .menu {
+    width: 40%;
+  }
 }
 
 .menu__cat {
@@ -772,6 +848,12 @@ main {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 992px) {
+  .menu__card__flex .comment {
+    width: 320px;
+  }
 }
 
 .menu__card__flex .price {

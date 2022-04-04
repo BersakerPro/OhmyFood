@@ -23,13 +23,14 @@
     </header>
     <main>
         <div class="local">
-            <i class="local__icon fas fa-map-marker-alt"></i>
-            <p>Paris, Belleville</p>
+            <i class="local__icon fas fa-map-marker-alt fax2"></i>
+            <input class="local__search" type="search" style="border: hidden;" placeholder="Paris, Belleville">
         </div>
         <div class="description">
             <h2>Réservez le menu qui<br>vous convient</h2>
             <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
-            <input class="btn-description" type="button" style="border: hidden;" value="Explorer nos restaurants">
+            <a class="href-style" href="#restlist">
+            <input class="btn-description" type="button" style="border: hidden;" value="Explorer nos restaurants"></a>
         </div>
         <section class="fonction">
             <h2>Fonctionnement</h2>
@@ -42,8 +43,9 @@
                             class="fonction__icon fas fa-store"></i>Dégustez au restaurant</span></li>
             </ul>
         </section>
-        <section class="restaurant">
+        <section id="restlist" class="restaurant">
             <h2>Restaurants</h2>
+            <div class="contain__restaurant__card">
             <div class="restaurant__card">
                 <a class="href-style" href="lapalettedugout.html">
                     <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût">
@@ -54,7 +56,7 @@
                             <p>Ménilmontant</p>
                         </div>
                         <div>
-                            <i class="iheart far fa-heart" tabindex="0"></i>
+                            <i class="iheart far fa-heart"></i>
                         </div>
                     </div>
                 </a>
@@ -68,7 +70,7 @@
                             <h3>La note enchantée</h3>
                             <p>Charonne</p>
                         </div>
-                        <i class="iheart far fa-heart" tabindex="0"></i>
+                        <i class="iheart far fa-heart"></i>
                     </div>
                 </a>
             </div>
@@ -81,7 +83,7 @@
                             <h3>À la française</h3>
                             <p>Cité rouge</p>
                         </div>
-                        <i class="iheart far fa-heart" tabindex="0"></i>
+                        <i class="iheart far fa-heart"></i>
                     </div>
                 </a>
             </div>
@@ -95,9 +97,10 @@
                             <h3>Le délice des sens</h3>
                             <p>Folie-méricourt</p>
                         </div>
-                        <i class="iheart far fa-heart" tabindex="0"></i>
+                        <i class="iheart far fa-heart"></i>
                     </div>
                 </a>
+            </div>
             </div>
 
         </section>
