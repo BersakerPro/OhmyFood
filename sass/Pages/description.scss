@@ -1,0 +1,19 @@
+.description{
+    margin: auto;
+    background-color: #F2F2F2;
+    padding-bottom: 51px;
+    h2{
+        margin: 0;
+        padding-top: 50px;
+        text-align: center;
+    }
+    p{
+        font-size: 18px;
+        text-align: center;
+    }
+    .btn-description{
+        width: 220px;
+        height: 50px;
+        @include btn;
+    }
+}

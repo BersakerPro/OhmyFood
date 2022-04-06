@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./Base/base";
+@import "./Components/loading-spinner.scss";
+@import "./Components/apparition-menu.scss";
+@import "./Layout/header.scss";
+@import "./Layout/footer.scss";
+@import "./Layout/anime-heart.scss";
+@import "./Layout/animation.scss";
+@import "./Pages/fonctionnement.scss";
+@import "./Pages/localisation.scss";
+@import "./Pages/description.scss";
+@import "./Pages/carte-restaurant.scss";
+@import "./Pages/menus.scss";
+
+
+
+main{
+    animation: apparition 0.2s 2s forwards;
+    opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+header{
+    opacity: 0;
+    height: 70px;
+    box-shadow:0 0 10px $color-shadow;
+    text-align: center;
+    animation: apparition 0.2s 2s forwards;
+    img{
+        width: 200px;
+        margin-top: 20px;
+    }
+    span{
+        position: absolute;
+        margin-left: -70px;
+        line-height: 70px;
+    }
+}
