@@ -1,0 +1,23 @@
+footer{
+    opacity: 0;
+    height: 220px;
+    background-color: $color-footer;
+    color: white;
+    padding-left: 30px;
+    line-height: 15px;
+    animation: apparition 0.2s 2s forwards;
+    .title{
+        font-family: 'Shrikhand', cursive;
+        font-size: 25px;
+        padding-top: 30px;
+        padding-bottom: 15px;
+    }
+    i{
+        margin-right: 10px;
+    }
+}
+
+.href-style__contact{
+    text-decoration: none;
+    color: white;
+}

@@ -1,0 +1,145 @@
+.contain__img__menu{
+    display: block;
+    width: 100%;
+    height: 250px;
+    .img__menu{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+.contain__menu{
+    border-radius: 50px 50px 0 0;
+    background-color: white;
+    margin-top: -40px;
+    position: relative;
+    .title{
+        height: 100px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .iheart{
+            line-height: 100px;
+            @include heart;
+        }
+    }
+}
+.menu{
+    width: 90%;
+    margin: auto;
+    @include desktop-only{
+        width: 40%;
+    }
+    &__cat{
+        margin-top: 40px;
+        border-bottom: solid 2px $color-tertiary;
+        width: 40px;
+        padding-bottom: 5px;
+        @include apparition;
+        animation-delay: 0.4s;
+    }
+}
+.menu__card{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px $color-shadow ;
+    margin: 25px 0;
+    &__text{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 5px;
+    }
+    &__flex{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 10px;
+        span{
+            margin: 5px 10px 10px 0;
+        }
+        .comment{
+            width: 250px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            @include desktop-only{
+                width: 320px;
+            }
+        }
+        .price{
+            font-weight: bold;
+            padding-right: 20px;
+        }
+    }
+}
+.menu__card:hover{
+    .check{
+        display: initial;
+        animation-name: checkmenu;
+        animation-duration: 200ms;
+        animation-fill-mode: forwards;
+    }
+    .comment{
+        animation: comment-width 0.1s forwards;
+    }
+}    
+
+
+.check{
+    width:60px;
+    border-radius: 0 20px 20px 0;
+    text-align: center;
+    background-color: $color-tertiary;
+    display: none;
+    i{
+        line-height: 70px;
+        font-weight: bold;
+        color: white;
+        @include icon-size;
+        animation: spin 400ms linear;
+    }
+}
+.button{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 220px;
+}
+.btn-command{
+    width: 220px;
+    height: 50px;
+    @include btn;
+}
+
+@keyframes checkmenu {
+    0%{
+        width: 0;
+        opacity: 0;
+    }
+    25%{
+        width: 15px;
+        opacity: 1;
+    }
+    50%{
+        width: 30px;
+        opacity: 1;
+    }
+    75%{
+        width: 45px;
+        opacity: 1;
+    }
+    100%{
+        width: 60px;
+        opacity: 1;
+    }
+}
+@keyframes comment-width {
+    to{
+        width: 190px;
+    }
+}
