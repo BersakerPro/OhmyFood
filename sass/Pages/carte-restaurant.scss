@@ -1,7 +1,7 @@
 .restaurant{
     width: 100%;
     @include desktop-only{
-        max-width: 1250px;
+        max-width: 1300px;
         margin: auto;
     }
     h2{

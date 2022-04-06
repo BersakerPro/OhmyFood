@@ -1,7 +1,7 @@
 .fonction{
     margin: 50px 20px;
     @include desktop-only{
-        max-width: 1250px;
+        max-width: 1300px;
         margin: auto;
     }
     ul{
