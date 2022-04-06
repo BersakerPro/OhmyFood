@@ -344,7 +344,7 @@ footer i {
 }
 @media screen and (min-width: 992px) {
   .fonction {
-    max-width: 1250px;
+    max-width: 1300px;
     margin: auto;
   }
 }
@@ -457,7 +457,7 @@ footer i {
 }
 @media screen and (min-width: 992px) {
   .restaurant {
-    max-width: 1250px;
+    max-width: 1300px;
     margin: auto;
   }
 }
